@@ -85,15 +85,20 @@ void pack_opener(map<string, list<string, Krazy_Kreature>> &collection, ifstream
     getline(cin, temp_rarity);
 
     Krazy_Kreature temp_object(temp_value, temp_rarity);
-    collection.insert(make_pair(temp_name, (temp_move1, temp_object)));
+    pair<string, Krazy_Kreature> temp_pair; // CITED: https://www.geeksforgeeks.org/forward-list-and-list-of-pairs-in-c-with-examples/ on declaring pairs/inserting pairs into a list; may be having interference with Krazy_Kreatures class object
+    temp_pair = make_pair(temp_move1, temp_object);
+    list<pair<string, Krazy_Kreature>> temp_list;
+    
+    collection.insert(temp_name, temp_list); // ERROR: with Krazy_Kreature object, NEED TO FIX
 }
+
 int main(){
     map<string, list<string, Krazy_Kreature>> collection;
     ifstream fin("Krazy-Kreatures-1-Kreature.txt");
     for (int i = 0; i < 1; i++){
         pack_opener(collection, fin);
     }
-
+    //output_collection function call
     fin.close();
     return 0;
 }
