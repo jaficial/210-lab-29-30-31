@@ -22,6 +22,7 @@
 #include <array>
 using namespace std;
 
+const int MIN = 1, MAX = 100;
 // rewriting the main function/thought process, the monetary value of a card must be a string to have all elements of the array to be list of strings
 // map[key][list0] = movelist
 // map[key][list1] = monetary_value
@@ -34,6 +35,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
     string temp_name;
     string temp_moves;
     string temp_value;
+    string temp_rarity;
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
         getline(fin, temp_moves); // first move
@@ -46,7 +48,10 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
 }
 
 string kreature_rarity(){
-    
+    int temp_rarity;
+    temp_rarity = (rand() % MAX) + MIN;
+
+    if (1 <= temp_rarity <= 50)
 }
 
 int main(){
