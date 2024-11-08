@@ -22,7 +22,7 @@
 
 using namespace std;
 
-
+// rewriting the main function
 int main(){
     
     
