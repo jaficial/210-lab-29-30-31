@@ -40,7 +40,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
 }
 
 string kreature_rarity(){
-
+//
 }
 
 int main(){
