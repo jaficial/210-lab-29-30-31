@@ -30,7 +30,7 @@ int main(){
     ifstream fin("Krazy-Kreatures-Alpha-Kreatures.txt");
     list<string> map_value[3];
     // need to fix rewriting the map 
-    map<string, map_value> collection; 
+    
 
     return 0;
 }
