@@ -22,9 +22,15 @@
 
 using namespace std;
 
-// rewriting the main function
+// rewriting the main function/thought process, the monetary value of a card must be a string to have all elements of the array to be list of strings
+
+
 int main(){
-    
-    
+    srand(time(0));
+    ifstream fin("Krazy-Kreatures-Alpha-Kreatures.txt");
+    list<string> map_value[3];
+    // need to fix rewriting the map 
+    map<string, map_value> collection; 
+
     return 0;
 }
