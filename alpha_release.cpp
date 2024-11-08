@@ -28,8 +28,32 @@ const int MIN = 1, MAX = 100;
 // map[key][list1] = monetary_value
 // map[key][list2] = rarity
 void read_kreature(map<string, array<list<string>, 3>> &, ifstream);
-string kreature_rarity(map<string, array<list<string>, 3>> &);
+string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
+
+string kreature_rarity(){
+    int temp_rarity;
+    temp_rarity = (rand() % MAX) + MIN;
+
+    if ((1 <= temp_rarity) && (temp_rarity <= 50)){ // Common rarity 50% chance rate
+        return "Common";
+    }
+    else if ((51 <= temp_rarity) && (temp_rarity <= 70)){ // Uncommon rarity 20% chance rate
+        return "Uncommon";
+    }
+    else if ((71 <= temp_rarity) && (temp_rarity <= 85)){ // Rare rarity 15% chance rate
+        return "Rare";
+    }
+    else if ((86 <= temp_rarity) && (temp_rarity <= 95)){ // Ultra-Rare rarity 10% chance rate
+        return "Ultra-Rare";
+    }
+    else if ((96 <= temp_rarity) && (temp_rarity <= 100)){ // Exotic rarity 5% chance rate
+        return "Exotic";
+    }
+    else {
+        return "Placeholder for bypassing no return on non-void function";
+    }
+}
 
 void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin){
     string temp_name;
@@ -45,13 +69,8 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
     }
     getline(fin, temp_value); // monetary value of the kreature
     collection[temp_name][1].push_back(temp_value); // m_value gets pushed into list[1]
-}
-
-string kreature_rarity(){
-    int temp_rarity;
-    temp_rarity = (rand() % MAX) + MIN;
-
-    if (1 <= temp_rarity <= 50)
+    temp_rarity = kreature_rarity();
+    collection[temp_name][2].push_back(temp_rarity); // rarity of card gets pushed into list[2]
 }
 
 int main(){
