@@ -23,14 +23,24 @@
 using namespace std;
 
 // rewriting the main function/thought process, the monetary value of a card must be a string to have all elements of the array to be list of strings
+void read_kreature(map<string, array<list<string>, 3>> &, ifstream);
+void kreature_rarity(map<string, array<list<string>, 3>> &);
+void output_collection(map<string, array<list<string>, 3>>);
 
+void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin){
+    string temp_string;
+    getline(fin, temp_string); // name of kreature
+}
+
+void kreature_rarity(map<string, array<list<string>, 3>> &collection){
+
+}
 
 int main(){
     srand(time(0));
     ifstream fin("Krazy-Kreatures-Alpha-Kreatures.txt");
-    list<string> map_value[3];
     // need to fix rewriting the map 
-    
+    map<string, array<list<string>, 3>> collection;
 
     return 0;
 }
