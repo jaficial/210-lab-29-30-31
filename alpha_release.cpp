@@ -10,6 +10,8 @@
 //  - rarity will not be featured in the data.txt file, but in the main file
 //  - will use srand/rand() to create the rarity system within this file 
 
+// SLIGHT CHANGE: Will need to change the way data is collected in order to have an array of lists, 
+// OMITTING THE "Krazy_Kreature" class, 
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -20,37 +22,9 @@
 
 using namespace std;
 
-class Krazy_Kreature{
-private:
-    int monetary_value;
-    string movelist[3];
-
-public:
-    // default constructor
-    Krazy_Kreature(){}
-
-    // parameter constructor
-    Krazy_Kreature(int m_value, string moves[3]) {
-        m_value = monetary_value;
-        // copies the string array from movelist to moves
-        for (int i = 0; i < 3; i++){
-            moves[i] = movelist[i];
-        }
-    }
-    // getters and setters
-    void set_value(int m_value) {monetary_value = m_value;}
-    int get_value() {return monetary_value;}
-    
-    void set_movelist(string moves[3]) {
-        for (int i = 0; i < 3; i++){
-            moves[i] = movelist[i];
-        }
-    }
-    // NOTE: getter for movelist has to be pointer to string array
-    string* get_movelist() {return movelist;}
-};
 
 int main(){
-    //
+    
+    
     return 0;
 }
