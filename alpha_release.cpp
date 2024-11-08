@@ -23,6 +23,9 @@
 using namespace std;
 
 // rewriting the main function/thought process, the monetary value of a card must be a string to have all elements of the array to be list of strings
+// map[key][list0] = movelist
+// map[key][list1] = monetary_value
+// map[key][list2] = rarity
 void read_kreature(map<string, array<list<string>, 3>> &, ifstream);
 string kreature_rarity(map<string, array<list<string>, 3>> &);
 void output_collection(map<string, array<list<string>, 3>>);
@@ -33,8 +36,9 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
     string temp_value;
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
-        getline(fin, temp_name); // first move
-        collection[temp_name][i] = temp_name;
+        getline(fin, temp_moves); // first move
+        // need to fix pushing a value to a list of the map
+        collection[temp_name][0].push_back(temp_moves); 
     }
     getline(fin, temp_value); // monetary value of the kreature
 }
