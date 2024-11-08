@@ -67,10 +67,16 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
         // possibly fixed the problem by including the "array" header 
         collection[temp_name][0].push_back(temp_moves); // should push back every read move list (3 moves per kreature)
     }
+
     getline(fin, temp_value); // monetary value of the kreature
     collection[temp_name][1].push_back(temp_value); // m_value gets pushed into list[1]
     temp_rarity = kreature_rarity();
     collection[temp_name][2].push_back(temp_rarity); // rarity of card gets pushed into list[2]
+}
+
+void output_collection(map<string, array<list<string>, 3>> collection){
+    // come back here during lunch
+
 }
 
 int main(){
