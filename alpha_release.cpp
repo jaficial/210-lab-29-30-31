@@ -34,7 +34,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
         getline(fin, temp_name); // first move
-        collection[temp_name] = 
+        collection[temp_name][i] = temp_name;
     }
     getline(fin, temp_value); // monetary value of the kreature
 }
