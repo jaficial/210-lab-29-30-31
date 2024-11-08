@@ -44,8 +44,13 @@ public:
     void set_movelist(string moves[3]) {
         for (int i = 0; i < 3; i++){
             moves[i] = movelist[i];
-        };
+        }
     }
-    void get_movelist()
-
+    // NOTE: getter for movelist has to be pointer to string array
+    string* get_movelist() {return movelist;}
 };
+
+int main(){
+    
+    return 0;
+}
