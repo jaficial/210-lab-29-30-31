@@ -1,0 +1,6 @@
+Unit Testing methods: 
+1. Test for end of file if there is no more data to read in the data txt file in "read_kreature" function.
+2. Run various tests on the "kreature_rarity" function to see if it'll ever return the error bypass message.
+3. Test for type casting when adding up the "monetary_values", as they are read in as strings instead of ints.
+
+// Driver Program for unit testing:

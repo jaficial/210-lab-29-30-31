@@ -80,12 +80,12 @@ void output_collection(map<string, array<list<string>, 3>> collection){
     cout << "This is the contents of the current collection:" << endl;
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
         cout << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
-        for (auto movelist : it->second[0]){
-            cout << movelist << ", "; // need to output lists/their contents
+        for (auto movelist : it->second[0]){ // outputs all moves from move list into one line, NOTE: need to fix the output for the last move
+            cout << movelist << ", "; 
             
         }
         cout << endl;
-        for (auto m_value : it->second[1]){
+        for (auto m_value : it->second[1]){ // CITED: cited output method from the "210-demo-stl-list-with-objects" example program
             cout << "Monetary Value: " << m_value;
         }
         cout << endl;
