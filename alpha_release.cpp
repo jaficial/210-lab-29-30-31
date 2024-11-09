@@ -20,6 +20,7 @@
 #include <random>
 #include <map>
 #include <array>
+#include <ctime>
 using namespace std;
 
 const int MIN = 1, MAX = 100;
@@ -27,7 +28,7 @@ const int MIN = 1, MAX = 100;
 // map[key][list0] = movelist
 // map[key][list1] = monetary_value
 // map[key][list2] = rarity
-void read_kreature(map<string, array<list<string>, 3>> &, ifstream);
+void read_kreature(map<string, array<list<string>, 3>> &, ifstream &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
 
@@ -55,7 +56,8 @@ string kreature_rarity(){
     }
 }
 
-void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin){
+// read_kreature is reading data from the file as expected
+void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fin){
     string temp_name;
     string temp_moves;
     string temp_value;
@@ -92,14 +94,14 @@ void output_collection(map<string, array<list<string>, 3>> collection){
         }
         cout << endl;
     }
-
 }
 
 int main(){
     srand(time(0));
     ifstream fin("Krazy-Kreatures-Alpha-Kreatures.txt");
-    // need to fix rewriting the map 
     map<string, array<list<string>, 3>> collection;
+    read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
+    output_collection(collection);
 
     return 0;
 }
