@@ -7,7 +7,7 @@ Unit Testing methods:
 // NOTE: add an if-statement in the "read_kreature" function to test for end of file
 map <string, array<list<string>, 3>> collection;
 ifstream fin("Krazy-Kreatures-Beta-Kreatures.txt") // new data txt file will be created with more data to test with
-// use a static int to hold the total 
+// use a static int to hold the total of all the cards, possilby add it the variable in the read_kreature function 
 for (int i = 0; i < 1000; i++){
     read_kreature(collection, fin); // may need to alter read_kreature from void to an int type function to test for returning an error/end of file
     if (read_kreature == 1){ // since kreature_rarity is called in read_kreature, it should also test the rarity function
