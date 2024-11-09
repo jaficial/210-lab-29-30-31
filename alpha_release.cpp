@@ -75,7 +75,11 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream fin
 }
 
 void output_collection(map<string, array<list<string>, 3>> collection){
-    // come back here during lunch
+    cout << "This is the contents of the current collection:" << endl;
+    for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
+        cout << "Krazy Kreature: " << it->first << endl;
+        
+    }
 
 }
 
