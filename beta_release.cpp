@@ -51,6 +51,12 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     string temp_moves;
     string temp_value;
     string temp_rarity;
+
+    if (fin.eof()){ // tests for end of file 
+        cout << "End of data file." << endl;
+        return;
+    }
+
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
         getline(fin, temp_moves); // first move
@@ -63,6 +69,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     collection[temp_name][1].push_back(temp_value); // m_value gets pushed into list[1]
     temp_rarity = kreature_rarity();
     collection[temp_name][2].push_back(temp_rarity); // rarity of card gets pushed into list[2]
+    cin.ignore(); // ignore due to endline separating the data for each Krazy Kreature
 }
 
 void output_collection(map<string, array<list<string>, 3>> collection){
