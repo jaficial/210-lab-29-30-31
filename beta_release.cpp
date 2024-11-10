@@ -52,10 +52,10 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     string temp_value;
     string temp_rarity;
 
-    if (fin.eof()){ // tests for end of file 
-        cout << "End of data file." << endl;
-        return;
-    }
+    // if (fin.eof()){ // tests for end of file 
+    //     cout << "End of data file." << endl;
+    //     return;
+    // }
 
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
@@ -94,7 +94,7 @@ void output_collection(map<string, array<list<string>, 3>> collection){
 
 int main(){
     srand(time(0));
-    ifstream fin("Krazy-Kreatures-Alpha-Kreatures.txt");
+    ifstream fin("Krazy-Kreatures-Beta-Kreatures.txt");
     map<string, array<list<string>, 3>> collection;
     read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
     output_collection(collection);

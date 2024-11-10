@@ -1,0 +1,7 @@
+Bugs/Issues that are encountered, will be noted in this file.
+
+BUG: Trying to run beta_release file with the newly implemented eof if-statement in the "read_kreature" function. 
+Currently, it is not reading the data txt file (Krazy-Kreatures-Beta-Kreatures.txt). Even when omitting the 
+eof test statement, the program isn't running like it's expected to, unlike its alpha counter-part (which is a 
+direct copy and paste from its alpha).
+ 
