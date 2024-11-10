@@ -5,4 +5,5 @@ Currently, it is not reading the data txt file (Krazy-Kreatures-Beta-Kreatures.t
 eof test statement, the program isn't running like it's expected to, unlike its alpha counter-part (which is a 
 direct copy and paste from its alpha).
 UPDATE: Had to remove a "cin.ignore()" statement at the end of the "read_kreature" function that was hindering the 
-program to continue running. NEW PROBLEM, data file is not being read currently.  
+program to continue running. NEW PROBLEM, data file is not being read currently. Might be because the data file
+is possibly not even in the beta branch.
