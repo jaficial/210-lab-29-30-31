@@ -96,7 +96,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     getline(fin, endl_container);
 }
 
-void output_collection(map<string, array<list<string>, 3>> collection){
+void output_collection(map<string, array<list<string>, 3>> collection, ){
     cout << "This is the contents of the current collection:" << endl;
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
         cout << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
@@ -118,7 +118,7 @@ void output_collection(map<string, array<list<string>, 3>> collection){
     
 }
 
-// NEED TO REWRITE THIS FUNCTION
+// NEED TO REWRITE THIS FUNCTION, COME BACK TO THIS
 void collection_value(map<string, array<list<string>, 3>> collection, vector<int> &collection_mvalues){
     int temp_value_converter;
     string test = "15";
