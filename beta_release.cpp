@@ -81,7 +81,8 @@ void output_collection(map<string, array<list<string>, 3>> collection){
         }
         cout << endl;
         for (auto m_value : it->second[1]){ // CITED: cited output method from the "210-demo-stl-list-with-objects" example program
-            cout << "Monetary Value: " << m_value;
+            cout << "Base Monetary Value: $" << m_value << endl;
+            cout << "Card Monetary Value: $" << 
         }
         cout << endl;
         for (auto rarity: it->second[2]){
@@ -97,10 +98,9 @@ void collection_value(map<string, array<list<string>, 3>> collection, vector<int
     string test = "15";
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){
         for (auto m_value : it->second[1]){
-            temp_value_converter = stoi(m_value);
+            temp_value_converter = stoi(m_value); // CITED: https://www.geeksforgeeks.org/convert-string-to-int-in-cpp/ on figuring out how to use stoi in order to type cast a string into an int
             collection_mvalues.push_back(temp_value_converter); // should push an int value of the monetary value of the card into the vector 
-        } 
-        
+        }         
     }
 }
 
@@ -120,6 +120,12 @@ int main(){
         }
     }
     
+    collection_value(collection, collection_mvalues);
+    // testing if the vector is accepting the values from the "collection_value" function
+    // WORKING
+    for (int i : collection_mvalues){
+        cout << i << endl;
+    }
     fin.close();
     return 0;
 }
