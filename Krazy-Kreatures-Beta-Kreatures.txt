@@ -120,3 +120,26 @@ Ink Blindness
 
 DeceivingCat
 Confusing Pounce
+Flashing Distress
+Scratch
+35
+
+MesoPterodactyl
+Beak Extender
+Stalking Glide
+Gripping Claws
+700
+
+LovingBear
+Bear Hug
+Vertical Climb
+Ferocious Bite
+630
+
+SnoringSheep
+Lullaby Sleep
+Suffocating Wool
+Adventurous Jump
+75
+
+
