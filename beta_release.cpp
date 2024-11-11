@@ -20,6 +20,8 @@ const int MIN = 1, MAX = 100;
 void read_kreature(map<string, array<list<string>, 3>> &, ifstream &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
+void colletion_value(map<string, array<list<string>, 3>>); // added function to add up the value of the collection after collecting 25 cards
+
 
 string kreature_rarity(){
     int temp_rarity;
@@ -103,6 +105,7 @@ int main(){
             break;
         }
     }
+    
     fin.close();
     return 0;
 }
