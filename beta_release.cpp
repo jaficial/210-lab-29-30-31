@@ -104,7 +104,7 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
         cout << setw(4) << "" << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
         
-        cout << "Movelist: "; // auto movelist : it->second[0]
+        cout << "Movelist: "; // auto movelist : it->second[0] //
         for (auto moves_iterator = it->second[0]){ // outputs all moves from move list into one line, NOTE: need to fix the output for the last move
             if (movelist = )
             cout << movelist << ", "; 
