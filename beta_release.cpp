@@ -12,6 +12,7 @@
 #include <array>
 #include <ctime>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 const int MIN = 1, MAX = 100;
@@ -98,11 +99,14 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
 
 void output_collection(map<string, array<list<string>, 3>> collection, vector<int> collection_mvalues){
     auto collection_mvalues_iterator = collection_mvalues.begin();
-    cout << "This is the contents of the current collection:" << endl;
+    cout << "Current Collection:" << endl;
+    cout << "-----------------------------------------------------" << endl;
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
-        cout << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
+        cout << setw(4) << "" << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
         
-        for (auto movelist : it->second[0]){ // outputs all moves from move list into one line, NOTE: need to fix the output for the last move
+        cout << "Movelist: "; // auto movelist : it->second[0]
+        for (auto moves_iterator = it->second[0]){ // outputs all moves from move list into one line, NOTE: need to fix the output for the last move
+            if (movelist = )
             cout << movelist << ", "; 
             
         }
@@ -129,7 +133,7 @@ void collection_value(vector<int> &collection_mvalues){
         collection_total_value = *collection_value_iterator + collection_total_value;
         collection_value_iterator++;
     }
-    cout << "-------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------" << endl;
     cout << "The total monetary value of this collection is: $" << collection_total_value << endl;
 }
 
@@ -139,12 +143,12 @@ int main(){
     map<string, array<list<string>, 3>> collection;
     vector<int> collection_mvalues; // using vector as a container for all the card's values
 
-    for (int i = 0; i < 2; i++){
+    for (int i = 0; i < 25; i++){
         read_kreature(collection, fin, collection_mvalues); // error, can't pass ifstream value by value. Has to be passed by reference
         output_collection(collection, collection_mvalues);
 
+        // Once the end of the data file is reached, break out of for loop
         if (fin.eof()){
-            cout << "End of file reached!" << endl;
             break;
         }
     }
