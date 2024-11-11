@@ -129,7 +129,7 @@ void collection_value(vector<int> &collection_mvalues){
         collection_total_value = *collection_value_iterator + collection_total_value;
         collection_value_iterator++;
     }
-    cout << "---------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------" << endl;
     cout << "The total monetary value of this collection is: $" << collection_total_value << endl;
 }
 
