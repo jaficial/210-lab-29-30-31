@@ -11,6 +11,7 @@
 #include <map>
 #include <array>
 #include <ctime>
+#include <vector>
 using namespace std;
 
 const int MIN = 1, MAX = 100;
@@ -20,7 +21,7 @@ const int MIN = 1, MAX = 100;
 void read_kreature(map<string, array<list<string>, 3>> &, ifstream &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
-void colletion_value(map<string, array<list<string>, 3>>); // added function to add up the value of the collection after collecting 25 cards
+void colletion_value(map<string, array<list<string>, 3>>, vector<int>); // added function to add up the value of the collection after collecting 25 cards
 
 
 string kreature_rarity(){
@@ -91,10 +92,23 @@ void output_collection(map<string, array<list<string>, 3>> collection){
     
 }
 
+void collection_value(map<string, array<list<string>, 3>> collection, vector<int> &collection_mvalues){
+    int temp_value_converter;
+    string test = "15";
+    for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){
+        for (auto m_value : it->second[1]){
+            temp_value_converter = stoi(m_value);
+            collection_mvalues.push_back(temp_value_converter); // should push an int value of the monetary value of the card into the vector 
+        } 
+        
+    }
+}
+
 int main(){
     srand(time(0));
     ifstream fin("Krazy-Kreatures-Beta-Kreatures.txt");
     map<string, array<list<string>, 3>> collection;
+    vector<int> collection_mvalues; // using vector as a container for all the card's values
 
     for (int i = 0; i < 2; i++){
         read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
