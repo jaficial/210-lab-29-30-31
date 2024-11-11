@@ -142,4 +142,8 @@ Suffocating Wool
 Adventurous Jump
 75
 
-
+TigerAxolotl
+Regenerative Healing
+Damaging Inhalation
+Disguising Transformation
+800

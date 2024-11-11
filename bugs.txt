@@ -10,6 +10,8 @@ is possibly not even in the beta branch.
 FIX: Found out that it was a minor user error on my part, where I mispelled the name of the file in the 
 beta_release.cpp file. 
 
+ISSUE ENCOUNTERED IN ALPHA/BETA: Needed to find a way to separate Kreatures in the data file, as well as how to  
+
 BUG: Trying to separate Kreatures in data file with endls, however running into issue where file isn't being
 read properly, thus not outputting expected outcomes. Tried using "cin.ignore()", didn't work.
 FIX: In "read_kreature" function, I added a temporary string variable to read the endl into with "getline"
@@ -24,3 +26,12 @@ memory.
 BUG: Having trouble outputting the movelist, by setting a condition to output the last move differently in the
 "output_collection" function.
 FIX: Fixed by creating another variable to hold the iterator of the last element of the list - 1.
+
+ISSUE ENCOUNTERED IN ALPHA: Passing the ifstream value into a function produced an error.
+FIX: Had to pass the address to the ifstream value in order to utilize it in the function.
+
+ISSUE ENCOUNTERED IN ALPHA/BETA: Could not have an array of varying list types, (Original plan was to have two string lists, 
+and an int list).
+FIX: Had to utilize string lists instead for the values of the map. I then converted the string numbers (card_values)
+into ints by using the "stoi()" function.
+
