@@ -7,11 +7,17 @@ direct copy and paste from its alpha).
 UPDATE: Had to remove a "cin.ignore()" statement at the end of the "read_kreature" function that was hindering the 
 program to continue running. NEW PROBLEM, data file is not being read currently. Might be because the data file
 is possibly not even in the beta branch.
-
 FIX: Found out that it was a minor user error on my part, where I mispelled the name of the file in the 
 beta_release.cpp file. 
 
 BUG: Trying to separate Kreatures in data file with endls, however running into issue where file isn't being
 read properly, thus not outputting expected outcomes. Tried using "cin.ignore()", didn't work.
-
 FIX: In "read_kreature" function, I added a temporary string variable to read the endl into with "getline"
+
+BUG: Error iterating through vector in the "collection_value" function; can't compare iterator to end of vector. 
+FIX: Used a while loop instead of a for loop in order to use a "!=" comparison operator
+
+BUG: In "collection_value" function, I am reading into random memory when adding the total up.
+FIX: Had to define the "collection_total_value" variable to 0, since only initializing it assigned it to random
+memory.
+

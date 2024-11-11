@@ -121,11 +121,16 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
     
 }
 
-// NEED TO REWRITE THIS FUNCTION, COME BACK TO THIS
+// WORKING NOW
 void collection_value(vector<int> &collection_mvalues){
     auto collection_value_iterator = collection_mvalues.begin();
-    int collection_total_value;
-    for (collection_value_iterator < collection_mvalues.end();  )
+    int collection_total_value = 0;
+    while(collection_value_iterator != collection_mvalues.end()){
+        collection_total_value = *collection_value_iterator + collection_total_value;
+        collection_value_iterator++;
+    }
+    cout << "---------------------------------------------------------" << endl;
+    cout << "The total monetary value of this collection is: $" << collection_total_value << endl;
 }
 
 int main(){
@@ -144,12 +149,8 @@ int main(){
         }
     }
     
-    // collection_value(collection, collection_mvalues);
-    // // testing if the vector is accepting the values from the "collection_value" function
-    // // WORKING
-    // for (int i : collection_mvalues){
-    //     cout << i << endl;
-    // }
+    collection_value(collection_mvalues);
+
     fin.close();
     return 0;
 }
