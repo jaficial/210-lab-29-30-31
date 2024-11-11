@@ -21,7 +21,7 @@ const int MIN = 1, MAX = 100;
 void read_kreature(map<string, array<list<string>, 3>> &, ifstream &, vector<int> &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
-void colletion_value(map<string, array<list<string>, 3>>, vector<int>); // added function to add up the value of the collection after collecting 25 cards
+void colletion_value(vector<int>); // added function to add up the value of the collection after collecting 25 cards
 int card_value(int, string);
 
 string kreature_rarity(){
@@ -101,9 +101,14 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
     cout << "This is the contents of the current collection:" << endl;
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
         cout << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
+        
         for (auto movelist : it->second[0]){ // outputs all moves from move list into one line, NOTE: need to fix the output for the last move
             cout << movelist << ", "; 
             
+        }
+        cout << endl;
+        for (auto rarity: it->second[2]){
+            cout << "Rarity: " << rarity;
         }
         cout << endl;
         for (auto m_value : it->second[1]){ // CITED: cited output method from the "210-demo-stl-list-with-objects" example program
@@ -111,25 +116,16 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
             cout << "Card Monetary Value: $" << *collection_mvalues_iterator; //
             collection_mvalues_iterator++;
         }
-        cout << endl;
-        for (auto rarity: it->second[2]){
-            cout << "Rarity: " << rarity;
-        }
         cout << endl << endl;
     }
     
 }
 
 // NEED TO REWRITE THIS FUNCTION, COME BACK TO THIS
-void collection_value(map<string, array<list<string>, 3>> collection, vector<int> &collection_mvalues){
-    int temp_value_converter;
-    string test = "15";
-    for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){
-        for (auto m_value : it->second[1]){
-            temp_value_converter = stoi(m_value); 
-            collection_mvalues.push_back(temp_value_converter); // should push an int value of the monetary value of the card into the vector 
-        }         
-    }
+void collection_value(vector<int> &collection_mvalues){
+    auto collection_value_iterator = collection_mvalues.begin();
+    int collection_total_value;
+    for (collection_value_iterator < collection_mvalues.end();  )
 }
 
 int main(){
