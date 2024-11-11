@@ -18,7 +18,7 @@ const int MIN = 1, MAX = 100;
 // map[key][list0] = movelist
 // map[key][list1] = monetary_value
 // map[key][list2] = rarity
-void read_kreature(map<string, array<list<string>, 3>> &, ifstream &);
+void read_kreature(map<string, array<list<string>, 3>> &, ifstream &, vector<int> &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
 void colletion_value(map<string, array<list<string>, 3>>, vector<int>); // added function to add up the value of the collection after collecting 25 cards
@@ -67,12 +67,14 @@ int card_value(string rarity, int value){
 }
 
 // read_kreature is reading data from the file as expected
-void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fin){
+void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fin, vector<int> &collection_mvalues){
     string temp_name; // name of Krazy Kreature
     string temp_moves; // name of moves
     string temp_value; // monetary value of base card
     string temp_rarity; // rarity of card
+    int temp_value_int; // temp variable to hold int of base card value
     int rarity_value; // monetary value of card, based on rarity
+
     string endl_container; // read endls into this variable 
 
     getline(fin, temp_name); // name of kreature
@@ -87,8 +89,10 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     collection[temp_name][1].push_back(temp_value); // m_value gets pushed into list[1]
     temp_rarity = kreature_rarity();
     collection[temp_name][2].push_back(temp_rarity); // rarity of card gets pushed into list[2]
-    card_value(temp_rarity, rarity_value);
     
+    temp_value_int = stoi(temp_value);// CITED: https://www.geeksforgeeks.org/convert-string-to-int-in-cpp/ on figuring out how to use stoi in order to type cast a string into an int
+    rarity_value = card_value(temp_rarity, temp_value_int);
+    collection_mvalues.push_back(rarity_value);
     getline(fin, endl_container);
 }
 
@@ -114,12 +118,13 @@ void output_collection(map<string, array<list<string>, 3>> collection){
     
 }
 
+// NEED TO REWRITE THIS FUNCTION
 void collection_value(map<string, array<list<string>, 3>> collection, vector<int> &collection_mvalues){
     int temp_value_converter;
     string test = "15";
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){
         for (auto m_value : it->second[1]){
-            temp_value_converter = stoi(m_value); // CITED: https://www.geeksforgeeks.org/convert-string-to-int-in-cpp/ on figuring out how to use stoi in order to type cast a string into an int
+            temp_value_converter = stoi(m_value); 
             collection_mvalues.push_back(temp_value_converter); // should push an int value of the monetary value of the card into the vector 
         }         
     }
@@ -132,7 +137,7 @@ int main(){
     vector<int> collection_mvalues; // using vector as a container for all the card's values
 
     for (int i = 0; i < 2; i++){
-        read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
+        read_kreature(collection, fin, collection_mvalues); // error, can't pass ifstream value by value. Has to be passed by reference
         output_collection(collection);
 
         if (fin.eof()){
