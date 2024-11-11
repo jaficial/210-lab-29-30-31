@@ -16,15 +16,21 @@
 using namespace std;
 
 const int MIN = 1, MAX = 100;
-// map[key][list0] = movelist
-// map[key][list1] = monetary_value
-// map[key][list2] = rarity
+/*
+    map[key][list0] = movelist
+    map[key][list1] = monetary_value
+    map[key][list2] = rarity
+*/
 void read_kreature(map<string, array<list<string>, 3>> &, ifstream &, vector<int> &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
 void colletion_value(vector<int>); // added function to add up the value of the collection after collecting 25 cards
-int card_value(int, string);
+int card_value(int, string); 
 
+/* 
+    kreature_rarity function returns a random rarity chosen from 5 various rarities: Common, Uncommon, Rare, Ultra-Rare, 
+    and Exotic. 
+*/ 
 string kreature_rarity(){
     int temp_rarity;
     temp_rarity = (rand() % MAX) + MIN;
@@ -49,6 +55,11 @@ string kreature_rarity(){
     }
 }
 
+/*
+    card_value function takes in the rarity of the card and the base value of the card as parameters, and returns 
+    the value of the card based on the rarity. The higher the rarity, the more the monetary value of the card
+    increases.
+*/
 int card_value(string rarity, int value){
     if (rarity == "Common"){
         return value;
@@ -67,7 +78,11 @@ int card_value(string rarity, int value){
     }
 }
 
-// read_kreature is reading data from the file as expected
+/*
+    read_kreature function takes in the map (card collection), ifstream object to the data file, and the vector which
+    holds the monetary values of each collected card. The function reads the data of each collected card into the map's 
+    key and values from the data file, as well as pushes each card's "monetary value" into the vector parameter.
+*/
 void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fin, vector<int> &collection_mvalues){
     string temp_name; // name of Krazy Kreature
     string temp_moves; // name of moves
@@ -97,8 +112,12 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     getline(fin, endl_container);
 }
 
+// output_collection function iterates thorugh map (card collection), and outputs the contents of the map in an organized matter
 void output_collection(map<string, array<list<string>, 3>> collection, vector<int> collection_mvalues){
-    
+    static int card_packs = 0;
+    card_packs++;
+    cout << "Opening card pack: #" << card_packs << endl;
+
     auto collection_mvalues_iterator = collection_mvalues.begin();
     cout << "Current Collection:" << endl;
     cout << "-----------------------------------------------------" << endl;
