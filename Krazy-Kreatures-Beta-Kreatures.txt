@@ -99,3 +99,24 @@ Ball Conversion
 Burrowing Relocation
 Skyrocketing Sphere
 120
+
+BoulderSnake
+Sneaky Shed
+Tightening Twist
+Venomous Strike
+410
+
+MartialTiger
+Balancing Stance
+Muay Pound
+Harmonic Dodge
+300
+
+OpposingOctopus
+Tentacle Wrap
+Suction Trap
+Ink Blindness
+380
+
+DeceivingCat
+Confusing Pounce
