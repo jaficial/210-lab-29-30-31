@@ -96,7 +96,8 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     getline(fin, endl_container);
 }
 
-void output_collection(map<string, array<list<string>, 3>> collection, ){
+void output_collection(map<string, array<list<string>, 3>> collection, vector<int> collection_mvalues){
+    auto collection_mvalues_iterator = collection_mvalues.begin();
     cout << "This is the contents of the current collection:" << endl;
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
         cout << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
@@ -107,7 +108,8 @@ void output_collection(map<string, array<list<string>, 3>> collection, ){
         cout << endl;
         for (auto m_value : it->second[1]){ // CITED: cited output method from the "210-demo-stl-list-with-objects" example program
             cout << "Base Monetary Value: $" << m_value << endl;
-            // cout << "Card Monetary Value: $" <<  // COME BACK TO THIS !!!
+            cout << "Card Monetary Value: $" << *collection_mvalues_iterator; //
+            collection_mvalues_iterator++;
         }
         cout << endl;
         for (auto rarity: it->second[2]){
@@ -138,7 +140,7 @@ int main(){
 
     for (int i = 0; i < 2; i++){
         read_kreature(collection, fin, collection_mvalues); // error, can't pass ifstream value by value. Has to be passed by reference
-        output_collection(collection);
+        output_collection(collection, collection_mvalues);
 
         if (fin.eof()){
             cout << "End of file reached!" << endl;
@@ -146,12 +148,12 @@ int main(){
         }
     }
     
-    collection_value(collection, collection_mvalues);
-    // testing if the vector is accepting the values from the "collection_value" function
-    // WORKING
-    for (int i : collection_mvalues){
-        cout << i << endl;
-    }
+    // collection_value(collection, collection_mvalues);
+    // // testing if the vector is accepting the values from the "collection_value" function
+    // // WORKING
+    // for (int i : collection_mvalues){
+    //     cout << i << endl;
+    // }
     fin.close();
     return 0;
 }
