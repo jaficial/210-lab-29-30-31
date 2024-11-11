@@ -22,7 +22,7 @@ void read_kreature(map<string, array<list<string>, 3>> &, ifstream &);
 string kreature_rarity();
 void output_collection(map<string, array<list<string>, 3>>);
 void colletion_value(map<string, array<list<string>, 3>>, vector<int>); // added function to add up the value of the collection after collecting 25 cards
-
+int card_value(int, string);
 
 string kreature_rarity(){
     int temp_rarity;
@@ -48,13 +48,32 @@ string kreature_rarity(){
     }
 }
 
+int card_value(string rarity, int value){
+    if (rarity == "Common"){
+        return value;
+    }
+    else if(rarity == "Uncommon"){
+        return value * 1.5;
+    }
+    else if (rarity == "Rare"){
+        return value * 3;
+    }
+    else if (rarity == "Ultra-Rare"){
+        return value * 5;
+    }
+    else{
+        return value * 10;
+    }
+}
+
 // read_kreature is reading data from the file as expected
 void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fin){
-    string temp_name;
-    string temp_moves;
-    string temp_value;
-    string temp_rarity;
-    string endl_container;
+    string temp_name; // name of Krazy Kreature
+    string temp_moves; // name of moves
+    string temp_value; // monetary value of base card
+    string temp_rarity; // rarity of card
+    int rarity_value; // monetary value of card, based on rarity
+    string endl_container; // read endls into this variable 
 
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
@@ -68,6 +87,8 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     collection[temp_name][1].push_back(temp_value); // m_value gets pushed into list[1]
     temp_rarity = kreature_rarity();
     collection[temp_name][2].push_back(temp_rarity); // rarity of card gets pushed into list[2]
+    card_value(temp_rarity, rarity_value);
+    
     getline(fin, endl_container);
 }
 
@@ -82,7 +103,7 @@ void output_collection(map<string, array<list<string>, 3>> collection){
         cout << endl;
         for (auto m_value : it->second[1]){ // CITED: cited output method from the "210-demo-stl-list-with-objects" example program
             cout << "Base Monetary Value: $" << m_value << endl;
-            cout << "Card Monetary Value: $" << 
+            // cout << "Card Monetary Value: $" <<  // COME BACK TO THIS !!!
         }
         cout << endl;
         for (auto rarity: it->second[2]){
