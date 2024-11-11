@@ -10,7 +10,7 @@ Shocking Dash
 Sneak
 90
 
-EarthTurtle
+EarthTortoise
 Vine Snap
 Nutrient Depletion
 Rock Defense
@@ -43,3 +43,37 @@ Poison Punisher
 VenusMonsterTrap
 Toxic Excretion
 Trap Clench
+Dodging Dance
+55
+
+FlamingPony
+Flaming Dash
+Blinding Flare
+Black Smoke
+180
+
+SlimeySalamander
+Poison Skin
+Expanding Claws
+Triple Slash
+160
+
+HydrogenTurtle
+Hydro Cannon
+Intellect Increase
+Spiritual Protection
+320
+
+SillySeal
+Distracting Disco Ball
+Aquatic Snap
+Flipper Slap
+210
+
+ThunderZebra
+Slippery Rain
+Mini Tornado
+Thunder Clap
+190
+
+
