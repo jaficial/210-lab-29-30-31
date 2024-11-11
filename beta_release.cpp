@@ -98,18 +98,19 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
 }
 
 void output_collection(map<string, array<list<string>, 3>> collection, vector<int> collection_mvalues){
+    
     auto collection_mvalues_iterator = collection_mvalues.begin();
     cout << "Current Collection:" << endl;
     cout << "-----------------------------------------------------" << endl;
     for (map<string, array<list<string>, 3>>::iterator it = collection.begin(); it != collection.end(); it++){ // CITED: cited output function from the "210-demo-std-map.cpp" example code
         cout << setw(4) << "" << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
         
-        cout << "Movelist: "; // auto movelist : it->second[0] //
+        cout << setw(4) << "" << "Movelist: "; 
+        auto last_move = it->second[0].end();
+        last_move--;
         for (auto moves_iterator = it->second[0].begin(); moves_iterator != it->second[0].end(); moves_iterator++){ // outputs all moves from move list into one line, CITED: cited output function from the 210-demo-stl-list "main.cpp" function
-            // for some reason, this is begin skipped through 
-            if (moves_iterator != it->second[0].end()){
+            if (moves_iterator == last_move){
                 cout << *moves_iterator;
-                cout << "made it here";
                 break;
             }
             else{
@@ -118,12 +119,12 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
         }
         cout << endl;
         for (auto rarity: it->second[2]){
-            cout << "Rarity: " << rarity;
+            cout << setw(4) << "" << "Rarity: " << rarity;
         }
         cout << endl;
         for (auto m_value : it->second[1]){ // CITED: cited output method from the "210-demo-stl-list-with-objects" example program
-            cout << "Base Monetary Value: $" << m_value << endl;
-            cout << "Card Monetary Value: $" << *collection_mvalues_iterator; //
+            cout << setw(4) << "" << "Base Monetary Value: $" << m_value << endl;
+            cout << setw(4) << "" << "Card Monetary Value: $" << *collection_mvalues_iterator; //
             collection_mvalues_iterator++;
         }
         cout << endl << endl;

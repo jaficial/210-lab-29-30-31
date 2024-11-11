@@ -21,4 +21,6 @@ BUG: In "collection_value" function, I am reading into random memory when adding
 FIX: Had to define the "collection_total_value" variable to 0, since only initializing it assigned it to random
 memory.
 
-BUG: Having trouble outputting the movelist, by setting a condition to output the last move differently.
+BUG: Having trouble outputting the movelist, by setting a condition to output the last move differently in the
+"output_collection" function.
+FIX: Fixed by creating another variable to hold the iterator of the last element of the list - 1.
