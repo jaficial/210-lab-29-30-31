@@ -151,7 +151,7 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
     
 }
 
-// WORKING NOW
+// collection_value iterates through the monetary values vector, and finds the sum of all the values
 void collection_value(vector<int> &collection_mvalues){
     auto collection_value_iterator = collection_mvalues.begin();
     int collection_total_value = 0;
@@ -168,7 +168,7 @@ int main(){
     ifstream fin("Krazy-Kreatures-Beta-Kreatures.txt");
     map<string, array<list<string>, 3>> collection;
     vector<int> collection_mvalues; // using vector as a container for all the card's values
-
+    
     for (int i = 0; i < 25; i++){
         read_kreature(collection, fin, collection_mvalues); // error, can't pass ifstream value by value. Has to be passed by reference
         output_collection(collection, collection_mvalues);
@@ -177,8 +177,7 @@ int main(){
         if (fin.eof()){
             break;
         }
-    }
-    
+    }   
     collection_value(collection_mvalues);
 
     fin.close();
