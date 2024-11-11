@@ -10,3 +10,8 @@ is possibly not even in the beta branch.
 
 FIX: Found out that it was a minor user error on my part, where I mispelled the name of the file in the 
 beta_release.cpp file. 
+
+BUG: Trying to separate Kreatures in data file with endls, however running into issue where file isn't being
+read properly, thus not outputting expected outcomes. Tried using "cin.ignore()", didn't work.
+
+FIX: In "read_kreature" function, I added a temporary string variable to read the endl into with "getline"

@@ -3,3 +3,9 @@ Fire Breath
 Wing Shield
 Sharpen Claws
 180
+
+ElectriMouse
+Tail Whip
+Shocking Dash
+Sneak
+140

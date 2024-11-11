@@ -51,6 +51,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     string temp_moves;
     string temp_value;
     string temp_rarity;
+    string endl_container;
 
     getline(fin, temp_name); // name of kreature
     for (int i = 0; i < 3; i++){ // moves of the kreature
@@ -64,7 +65,7 @@ void read_kreature(map<string, array<list<string>, 3>> &collection, ifstream &fi
     collection[temp_name][1].push_back(temp_value); // m_value gets pushed into list[1]
     temp_rarity = kreature_rarity();
     collection[temp_name][2].push_back(temp_rarity); // rarity of card gets pushed into list[2]
-    
+    getline(fin, endl_container);
 }
 
 void output_collection(map<string, array<list<string>, 3>> collection){
@@ -83,17 +84,25 @@ void output_collection(map<string, array<list<string>, 3>> collection){
         for (auto rarity: it->second[2]){
             cout << "Rarity: " << rarity;
         }
-        cout << endl;
+        cout << endl << endl;
     }
+    
 }
 
 int main(){
     srand(time(0));
     ifstream fin("Krazy-Kreatures-Beta-Kreatures.txt");
     map<string, array<list<string>, 3>> collection;
-    read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
-    output_collection(collection);
 
+    for (int i = 0; i < 2; i++){
+        read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
+        output_collection(collection);
+
+        // if (fin.eof()){
+        //     cout << "End of file reached!" << endl;
+        //     break;
+        // }
+    }
     fin.close();
     return 0;
 }
