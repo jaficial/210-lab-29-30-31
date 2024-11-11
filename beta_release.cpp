@@ -105,10 +105,16 @@ void output_collection(map<string, array<list<string>, 3>> collection, vector<in
         cout << setw(4) << "" << "Krazy Kreature: " << it->first << endl; // name (or key of map) of Krazy Kreature
         
         cout << "Movelist: "; // auto movelist : it->second[0] //
-        for (auto moves_iterator = it->second[0]){ // outputs all moves from move list into one line, NOTE: need to fix the output for the last move
-            if (movelist = )
-            cout << movelist << ", "; 
-            
+        for (auto moves_iterator = it->second[0].begin(); moves_iterator != it->second[0].end(); moves_iterator++){ // outputs all moves from move list into one line, CITED: cited output function from the 210-demo-stl-list "main.cpp" function
+            // for some reason, this is begin skipped through 
+            if (moves_iterator != it->second[0].end()){
+                cout << *moves_iterator;
+                cout << "made it here";
+                break;
+            }
+            else{
+                cout << *moves_iterator << ", ";
+            }
         }
         cout << endl;
         for (auto rarity: it->second[2]){
