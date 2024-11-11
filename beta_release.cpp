@@ -98,10 +98,10 @@ int main(){
         read_kreature(collection, fin); // error, can't pass ifstream value by value. Has to be passed by reference
         output_collection(collection);
 
-        // if (fin.eof()){
-        //     cout << "End of file reached!" << endl;
-        //     break;
-        // }
+        if (fin.eof()){
+            cout << "End of file reached!" << endl;
+            break;
+        }
     }
     fin.close();
     return 0;
