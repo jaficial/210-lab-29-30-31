@@ -1,0 +1,45 @@
+Bugs/Issues that are encountered, will be noted in this file.
+
+BUG: Trying to run beta_release file with the newly implemented eof if-statement in the "read_kreature" function. 
+Currently, it is not reading the data txt file (Krazy-Kreatures-Beta-Kreatures.txt). Even when omitting the 
+eof test statement, the program isn't running like it's expected to, unlike its alpha counter-part (which is a 
+direct copy and paste from its alpha).
+UPDATE: Had to remove a "cin.ignore()" statement at the end of the "read_kreature" function that was hindering the 
+program to continue running. NEW PROBLEM, data file is not being read currently. Might be because the data file
+is possibly not even in the beta branch.
+FIX: Found out that it was a minor user error on my part, where I mispelled the name of the file in the 
+beta_release.cpp file. 
+
+ISSUE ENCOUNTERED IN ALPHA/BETA: Needed to find a way to separate Kreatures in the data file, as well as how to 
+recognize those separations.
+FIX: Ended up using endls in the data file to separate the various Kreatures. 
+
+BUG: Trying to separate Kreatures in data file with endls, however running into issue where file isn't being
+read properly, thus not outputting expected outcomes. Tried using "cin.ignore()", didn't work.
+FIX: In "read_kreature" function, I added a temporary string variable to read the endl into with "getline"
+
+BUG: Error iterating through vector in the "collection_value" function; can't compare iterator to end of vector. 
+FIX: Used a while loop instead of a for loop in order to use a "!=" comparison operator
+
+ISSUE ENCOUNTERED IN BETA: Needed a way to add up the monetary values of each card, when the monetary values
+were read as strings instead of int.
+FIX: Utilized the "stoi()" function in order to type cast the strings into ints
+
+ISSUE ENCOUNTERED IN BETA: Needed a way to hold the monetary values (as ints), as I was not able to hold them 
+in the map. 
+FIX: Used an int vector to hold all the monetary values.
+
+BUG: In "collection_value" function, I am reading into random memory when adding the total up.
+FIX: Had to define the "collection_total_value" variable to 0, since only initializing it assigned it to random
+memory.
+
+BUG: Having trouble outputting the movelist, by setting a condition to output the last move differently in the
+"output_collection" function.
+FIX: Fixed by creating another variable to hold the iterator of the last element of the list - 1.
+
+ISSUE ENCOUNTERED IN ALPHA: Passing the ifstream value into a function produced an error.
+FIX: Had to pass the address to the ifstream value in order to utilize it in the function.
+
+ISSUE ENCOUNTERED IN ALPHA/BETA: Could not have an array of varying list types, (Original plan was to have two string lists, 
+and an int list).
+FIX: Had to utilize string lists instead for the values of the map.

@@ -1,0 +1,149 @@
+ArmaDragon
+Fire Breath
+Wing Shield
+Sharpen Claws
+60
+
+ElectriMouse
+Tail Whip
+Shocking Dash
+Sneak
+90
+
+EarthTortoise
+Vine Snap
+Nutrient Depletion
+Rock Defense
+40
+
+InfraAnt
+Mandible Pinch
+Strength Powerup
+Leaf Regeneration
+85
+
+FlyingMantis 
+Plant Camouflage
+Preying Grasp
+Bite
+100
+
+KillerKrab
+Knockout Klaw
+Shell Harden
+Krab Walk Dodge
+120
+
+NocturnalMoth
+Light Distraction
+Flight Avoidance
+Poison Punisher
+30
+
+VenusMonsterTrap
+Toxic Excretion
+Trap Clench
+Dodging Dance
+55
+
+FlamingPony
+Flaming Dash
+Blinding Flare
+Black Smoke
+180
+
+SlimeySalamander
+Poison Skin
+Expanding Claws
+Triple Slash
+160
+
+HydrogenTurtle
+Hydro Cannon
+Intellect Increase
+Spiritual Protection
+320
+
+SillySeal
+Distracting Disco Ball
+Aquatic Snap
+Flipper Slap
+210
+
+ThunderZebra
+Slippery Rain
+Mini Tornado
+Thunder Clap
+190
+
+PricklyUrchin
+Defensive Points
+Sea Stab
+Attaching Anchor
+75
+
+SmoothSnail
+Posionous Trail
+Exploding Shell
+Salt Protection
+100
+
+PsychicChameleon 
+Confusing Camouflage
+Nauseous Gas
+Tongue Whip
+280
+
+RollingDillo
+Ball Conversion
+Burrowing Relocation
+Skyrocketing Sphere
+120
+
+BoulderSnake
+Sneaky Shed
+Tightening Twist
+Venomous Strike
+410
+
+MartialTiger
+Balancing Stance
+Muay Pound
+Harmonic Dodge
+300
+
+OpposingOctopus
+Tentacle Wrap
+Suction Trap
+Ink Blindness
+380
+
+DeceivingCat
+Confusing Pounce
+Flashing Distress
+Scratch
+35
+
+MesoPterodactyl
+Beak Extender
+Stalking Glide
+Gripping Claws
+700
+
+LovingBear
+Bear Hug
+Vertical Climb
+Ferocious Bite
+630
+
+SnoringSheep
+Lullaby Sleep
+Suffocating Wool
+Adventurous Jump
+75
+
+TigerAxolotl
+Regenerative Healing
+Damaging Inhalation
+Disguising Transformation
+800
