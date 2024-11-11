@@ -76,3 +76,26 @@ Mini Tornado
 Thunder Clap
 190
 
+PricklyUrchin
+Defensive Points
+Sea Stab
+Attaching Anchor
+75
+
+SmoothSnail
+Posionous Trail
+Exploding Shell
+Salt Protection
+100
+
+PsychicChameleon 
+Confusing Camouflage
+Nauseous Gas
+Tongue Whip
+280
+
+RollingDillo
+Ball Conversion
+Burrowing Relocation
+Skyrocketing Sphere
+120
